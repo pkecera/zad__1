@@ -22,6 +22,8 @@ import sys
 import time
 import logging
 from io import StringIO
+import datetime
+
 
 HOST, PORT = '0.0.0.0', 5060
 rx_register = re.compile("^REGISTER")
@@ -70,7 +72,7 @@ recordroute = ""
 topvia = ""
 registrar = {}
 # my global var
-history_file = ""
+names = ""
 
 
 def hexdump(chars, sep, width):
@@ -274,9 +276,14 @@ class UDPHandler(socketserver.BaseRequestHandler):
         logging.debug("Expires= %d" % expires)
         registrar[fromm] = [contact, self.socket, self.client_address, validity]
         ip,port = contact.split(":")
+        history_file = open(names,"a")
+        history_file.write(time.strftime("%H:%M:%S "))
         history_file.write(f"pouzivatel {fromm} sa zaregistroval a pripojil sa z ip {contact} a portu {port}\n")
+        history_file.close()
         self.debugRegister()
         self.sendResponse("200 0K,v poriadku")
+
+
 
     def processInvite(self):
         logging.debug("-----------------")
@@ -431,9 +438,11 @@ class UDPHandler(socketserver.BaseRequestHandler):
 
 
 def handle_topvia_recordroute_file(ip,name):
-    global history_file,topvia,recordroute
+    global topvia,recordroute,names
     recordroute = "Record-Route: <sip:%s:%d;lr>" % (ip, PORT)
     topvia = "Via: SIP/2.0/UDP %s:%d" % (ip, PORT)
-    history_file = open(name,"w")
+    names = name
+
+
 
     

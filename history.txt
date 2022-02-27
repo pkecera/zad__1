@@ -1,0 +1,6 @@
+15:10:03 pouzivatel papko@192.168.0.109 sa zaregistroval a pripojil sa z ip 192.168.0.110:50702 a portu 50702
+15:10:08 pouzivatel pap@192.168.0.109 sa zaregistroval a pripojil sa z ip 192.168.0.125:54344 a portu 54344
+15:10:15 pouzivatel patri@192.168.0.109 sa zaregistroval a pripojil sa z ip 192.168.0.109:62133 a portu 62133
+15:10:15 pouzivatel pc@192.168.0.100 sa zaregistroval a pripojil sa z ip 192.168.0.100:62134 a portu 62134
+15:11:07 pouzivatel papko@192.168.0.109 sa zaregistroval a pripojil sa z ip 192.168.0.110:50702 a portu 50702
+15:11:15 pouzivatel pap@192.168.0.109 sa zaregistroval a pripojil sa z ip 192.168.0.125:62816 a portu 62816
