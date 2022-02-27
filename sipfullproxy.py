@@ -23,7 +23,6 @@ import time
 from io import StringIO
 import datetime
 
-
 HOST, PORT = '0.0.0.0', 5060
 rx_register = re.compile("^REGISTER")
 rx_invite = re.compile("^INVITE")
@@ -83,7 +82,6 @@ def hexdump(chars, sep, width):
 
 def quotechars(chars):
     return ''.join(['.', c][c.isalnum()] for c in chars)
-
 
 
 class UDPHandler(socketserver.BaseRequestHandler):
@@ -202,7 +200,6 @@ class UDPHandler(socketserver.BaseRequestHandler):
         text = text.encode("utf-8")
         self.socket.sendto(text, self.client_address)
 
-
     def processRegister(self):
         fromm = ""
         contact = ""
@@ -256,15 +253,13 @@ class UDPHandler(socketserver.BaseRequestHandler):
             validity = now + expires
 
         registrar[fromm] = [contact, self.socket, self.client_address, validity]
-        ip,port = contact.split(":")
-        history_file = open(names,"a")
+        ip, port = contact.split(":")
+        history_file = open(names, "a")
         history_file.write(time.strftime("%H:%M:%S "))
         history_file.write(f"pouzivatel {fromm} sa zaregistroval a pripojil sa z ip {contact} a portu {port}\n")
         history_file.close()
 
         self.sendResponse("200 0K,v poriadku")
-
-
 
     def processInvite(self):
         origin = self.getOrigin()
@@ -307,8 +302,6 @@ class UDPHandler(socketserver.BaseRequestHandler):
                 text = text.encode("utf-8")
                 socket.sendto(text, claddr)
 
-
-
     def processNonInvite(self):
 
         origin = self.getOrigin()
@@ -345,7 +338,6 @@ class UDPHandler(socketserver.BaseRequestHandler):
                 text = "\r\n".join(data)
                 text = text.encode("utf-8")
                 socket.sendto(text, claddr)
-
 
     def processRequest(self):
         # print "processRequest"
@@ -395,18 +387,11 @@ class UDPHandler(socketserver.BaseRequestHandler):
             self.processRequest()
         else:
             if len(data) > 4:
-
-
                 hexdump(data, ' ', 16)
 
 
-
-def handle_topvia_recordroute_file(ip,name):
-    global topvia,recordroute,names
+def handle_topvia_recordroute_file(ip, name):
+    global topvia, recordroute, names
     recordroute = "Record-Route: <sip:%s:%d;lr>" % (ip, PORT)
     topvia = "Via: SIP/2.0/UDP %s:%d" % (ip, PORT)
     names = name
-
-
-
-    
