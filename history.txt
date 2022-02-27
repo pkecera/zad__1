@@ -4,3 +4,7 @@
 23:26:58 pouzivatel iphone@147.175.191.146 sa zaregistroval a pripojil sa z ip 147.175.190.161:49484 a portu 49484
 23:26:58 pouzivatel iphone@147.175.191.146 sa zaregistroval a pripojil sa z ip 147.175.190.161:49484 a portu 49484
 23:29:01 pouzivatel iphone@147.175.191.146 sa zaregistroval a pripojil sa z ip 147.175.190.161:58599 a portu 58599
+23:41:44 pouzivatel ntb@147.175.191.146 sa zaregistroval a pripojil sa z ip 147.175.191.146:56782 a portu 56782
+23:41:50 pouzivatel iphone@147.175.191.146 sa zaregistroval a pripojil sa z ip 147.175.190.161:64490 a portu 64490
+23:41:50 pouzivatel iphone@147.175.191.146 sa zaregistroval a pripojil sa z ip 147.175.190.161:64490 a portu 64490
+23:41:50 pouzivatel iphone@147.175.191.146 sa zaregistroval a pripojil sa z ip 147.175.190.161:64490 a portu 64490

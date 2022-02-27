@@ -11,7 +11,8 @@ def main():
     sfp.handle_topvia_recordroute_file(ip, name)
     print(f"Server na ip: {ip} je spusteny!")
     sip_proxy = socketserver.UDPServer((sfp.HOST, sfp.PORT), sfp.UDPHandler)  # from sipfullproxy.py
-    sip_proxy.serve_forever()
+    while 1:
+        sip_proxy.handle_request()
 
 
 if __name__ == "__main__":
