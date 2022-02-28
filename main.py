@@ -1,8 +1,7 @@
 import socketserver
 import sipfullproxy as sfp
 import socket
-import logging
-import time
+
 
 
 def main():

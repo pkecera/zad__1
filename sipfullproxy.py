@@ -261,6 +261,7 @@ class UDPHandler(socketserver.BaseRequestHandler):
 
         self.sendResponse("200 0K,v poriadku")
 
+
     def processInvite(self):
         origin = self.getOrigin()
         if len(origin) == 0 or origin not in registrar:
